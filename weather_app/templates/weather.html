@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Information for {{ weather_data.city }}</h1>
+        <p>Country: {{ weather_data.country }}</p>
+        <p>Temperature: {{ weather_data.temperature }}°C</p>
+        <p>Description: {{ weather_data.description }}</p>
+        <p>Time: {{ weather_data.time }}</p>
+        <p>Date: {{ weather_data.date }}</p>
+        <img src="http://openweathermap.org/img/wn/{{ weather_data.icon }}.png" alt="Weather Icon">
+
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Homepage</a>
+    </div>
+</body>
+</html>
