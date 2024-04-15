@@ -51,7 +51,7 @@ class WeatherApp:
         data = response.json()
 
         # Process weather data
-        if data["cod"] == 200:
+        if response.status_code == 200:
             weather_data = {
                 "city": data["name"],
                 "country": data.get("sys", {}).get("country", ""),  # Safely extract country information
